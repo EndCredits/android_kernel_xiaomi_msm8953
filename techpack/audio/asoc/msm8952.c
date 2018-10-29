@@ -74,6 +74,14 @@ static int msm8952_mclk_event(struct snd_soc_dapm_widget *w,
 static int msm8952_wsa_switch_event(struct snd_soc_dapm_widget *w,
 			      struct snd_kcontrol *kcontrol, int event);
 
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+int ext_pa_gpio = 0;
+int ext_pa_status = 0;
+#endif
+
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 /*
  * Android L spec
  * Need to report LINEIN
@@ -82,11 +90,25 @@ static int msm8952_wsa_switch_event(struct snd_soc_dapm_widget *w,
 static struct wcd_mbhc_config mbhc_cfg = {
 	.read_fw_bin = false,
 	.calibration = NULL,
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+	.detect_extn_cable = false,
+#else
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	.detect_extn_cable = true,
 	.mono_stero_detection = false,
 	.swap_gnd_mic = NULL,
 	.hs_ext_micbias = false,
 	.key_code[0] = KEY_MEDIA,
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_MIDO) || (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+	.key_code[1] = BTN_1,
+	.key_code[2] = BTN_2,
+	.key_code[3] = 0,
+#else
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	.key_code[1] = KEY_VOICECOMMAND,
 	.key_code[2] = KEY_VOLUMEUP,
 	.key_code[3] = KEY_VOLUMEDOWN,
@@ -326,6 +348,12 @@ int is_ext_spk_gpio_support(struct platform_device *pdev,
 				__func__, pdata->spk_ext_pa_gpio);
 			return -EINVAL;
 		}
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+		ext_pa_gpio = pdata->spk_ext_pa_gpio;
+#endif
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	}
 	return 0;
 }
@@ -342,6 +370,13 @@ static int enable_spk_ext_pa(struct snd_soc_codec *codec, int enable)
 		return false;
 	}
 
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+	ext_pa_status = enable;
+#endif
+
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	pr_debug("%s: %s external speaker PA\n", __func__,
 		enable ? "Enable" : "Disable");
 
@@ -1517,6 +1552,12 @@ static void *def_msm8952_wcd_mbhc_cal(void)
 		return NULL;
 
 #define S(X, Y) ((WCD_MBHC_CAL_PLUG_TYPE_PTR(msm8952_wcd_cal)->X) = (Y))
+<<<<<<< HEAD
+=======
+#if (defined CONFIG_MACH_XIAOMI_MIDO) || (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+	S(v_hs_max, 1600);
+#else
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	S(v_hs_max, 1500);
 #undef S
 #define S(X, Y) ((WCD_MBHC_CAL_BTN_DET_PTR(msm8952_wcd_cal)->X) = (Y))
@@ -1540,6 +1581,33 @@ static void *def_msm8952_wcd_mbhc_cal(void)
 	 * 210-290 == Button 2
 	 * 360-680 == Button 3
 	 */
+<<<<<<< HEAD
+=======
+#ifdef CONFIG_MACH_XIAOMI_MIDO
+	btn_low[0] = 73;
+	btn_high[0] = 73;
+	btn_low[1] = 233;
+	btn_high[1] = 233;
+	btn_low[2] = 438;
+	btn_high[2] = 438;
+	btn_low[3] = 438;
+	btn_high[3] = 438;
+	btn_low[4] = 438;
+	btn_high[4] = 438;
+#else
+#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
+	btn_low[0] = 91;
+	btn_high[0] = 91;
+	btn_low[1] = 259;
+	btn_high[1] = 259;
+	btn_low[2] = 488;
+	btn_high[2] = 488;
+	btn_low[3] = 488;
+	btn_high[3] = 488;
+	btn_low[4] = 488;
+	btn_high[4] = 488;
+#else
+>>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 	btn_low[0] = 75;
 	btn_high[0] = 75;
 	btn_low[1] = 150;
