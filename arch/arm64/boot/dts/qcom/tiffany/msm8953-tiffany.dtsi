@@ -20,15 +20,7 @@
 		android {
 			fstab {
 				vendor {
-					fsmgr_flags = "wait";
-					status = "disable";
-				};
-				system {
-					compatible = "android,system";
-					dev = "/dev/block/platform/soc/7824900.sdhci/by-name/system";
-					type = "ext4";
-					mnt_flags = "ro,barrier=1,discard";
-					fsmgr_flags = "wait";
+          dev = "/dev/block/platform/soc/7824900.sdhci/by-name/cust";
 					status = "ok";
 				};
 
