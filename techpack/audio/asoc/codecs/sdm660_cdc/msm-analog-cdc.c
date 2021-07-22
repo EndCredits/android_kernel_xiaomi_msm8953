@@ -58,12 +58,6 @@
 #define SPK_PMD 2
 #define SPK_PMU 3
 
-<<<<<<< HEAD
-=======
-#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
-#define MICBIAS_DEFAULT_VAL 2200000
-#else
->>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 #define MICBIAS_DEFAULT_VAL 1800000
 #define MICBIAS_MIN_VAL 1600000
 #define MICBIAS_STEP_SIZE 50000

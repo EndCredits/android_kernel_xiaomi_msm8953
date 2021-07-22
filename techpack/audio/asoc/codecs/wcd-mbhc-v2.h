@@ -138,20 +138,8 @@ do {                                                    \
 				  SND_JACK_BTN_2 | SND_JACK_BTN_3 | \
 				  SND_JACK_BTN_4 | SND_JACK_BTN_5)
 #define OCP_ATTEMPT 20
-<<<<<<< HEAD
-=======
-#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
-#define HS_DETECT_PLUG_TIME_MS (2500)
-#else
->>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 #define HS_DETECT_PLUG_TIME_MS (3 * 1000)
 #define SPECIAL_HS_DETECT_TIME_MS (2 * 1000)
-<<<<<<< HEAD
-=======
-#if (defined CONFIG_MACH_XIAOMI_MIDO) || (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
-#define MBHC_BUTTON_PRESS_THRESHOLD_MIN 750
-#else
->>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 #define MBHC_BUTTON_PRESS_THRESHOLD_MIN 250
 #define GND_MIC_SWAP_THRESHOLD 4
 #define GND_MIC_USBC_SWAP_THRESHOLD 2
@@ -162,12 +150,6 @@ do {                                                    \
 #define FAKE_REM_RETRY_ATTEMPTS 3
 #define MAX_IMPED 60000
 
-<<<<<<< HEAD
-=======
-#if (defined CONFIG_MACH_XIAOMI_TISSOT) || (defined CONFIG_MACH_XIAOMI_TIFFANY)
-#define WCD_MBHC_BTN_PRESS_COMPL_TIMEOUT_MS  200
-#else
->>>>>>> 9d4723ac1fba (techpack:audio: Add xiaomi 5x support)
 #define WCD_MBHC_BTN_PRESS_COMPL_TIMEOUT_MS  50
 #define ANC_DETECT_RETRY_CNT 7
 #define WCD_MBHC_SPL_HS_CNT  1
